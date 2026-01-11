@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZeroNews - 零讯内网穿透平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+                         'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .content {
+            padding: 60px 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .section p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .feature-card p {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        .usage-steps {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .usage-steps ol {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+
+        .usage-steps li {
+            counter-increment: step-counter;
+            margin-bottom: 25px;
+            padding-left: 60px;
+            position: relative;
+            font-size: 1.1em;
+        }
+
+        .usage-steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: -5px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .platforms {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .platform-tag {
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+            margin-top: 50px;
+            border-radius: 15px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .header .subtitle {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 40px 20px;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ZeroNews</h1>
+            <div class="subtitle">零讯 - 边缘云内网穿透平台</div>
+            <p>创新的边缘云内网穿透解决方案，让您的内网资源触手可及</p>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>什么是 ZeroNews</h2>
+                <p>
+                    ZeroNews 是一个创新的边缘云内网穿透平台，中文名称为【零讯】，旨在帮助用户快速解决内网与外网之间的安全、快速访问需求。
+                </p>
+                <p>
+                    通过自研高性能 zeronews tunnel 协议，ZeroNews 在无需更改内网网络环境或安装 VPN 等工具的情况下，
+                    让用户能够便捷地访问内网应用及资源。
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>核心特性</h2>
+                <div class="features">
+                    <div class="feature-card">
+                        <h3>🚀 免安装 Agent</h3>
+                        <p>下载即可快速运行，无需系统依赖，真正做到开箱即用</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🔒 安全可靠</h3>
+                        <p>采用先进的加密技术，确保数据传输安全，保护您的隐私</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>⚡ 高性能协议</h3>
+                        <p>自研 zeronews tunnel 协议，提供超快的传输速度和稳定的连接</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🌐 无需 VPN</h3>
+                        <p>不需要复杂的 VPN 配置，简单快捷地实现内网穿透</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>💻 跨平台支持</h3>
+                        <p>支持 Windows、macOS、Linux、Openwrt、树莓派等多种平台</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📱 多架构兼容</h3>
+                        <p>同时支持 x86 和 ARM 架构的系统及设备</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>支持平台</h2>
+                <p>ZeroNews Agent 支持以下操作系统和设备：</p>
+                <div class="platforms">
+                    <span class="platform-tag">Windows (x86/x64)</span>
+                    <span class="platform-tag">macOS (Intel/Apple Silicon)</span>
+                    <span class="platform-tag">Linux (x86/x64)</span>
+                    <span class="platform-tag">Linux (ARM/ARM64)</span>
+                    <span class="platform-tag">Openwrt</span>
+                    <span class="platform-tag">树莓派</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>应用场景</h2>
+                <div class="features">
+                    <div class="feature-card">
+                        <h3>远程办公</h3>
+                        <p>在家也能访问公司内网资源，提高工作效率</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>开发调试</h3>
+                        <p>快速将本地服务暴露到公网，方便测试和调试</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>物联网设备</h3>
+                        <p>轻松访问内网的智能家居设备和传感器</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>数据同步</h3>
+                        <p>安全地在不同网络间同步和传输数据</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>开始使用 ZeroNews</h2>
+                <p>在懒猫云平台上，ZeroNews 的配置已经为您简化</p>
+                <p>只需在设置向导中输入您的 Token 即可完成部署</p>
+                <a href="https://user.zeronews.cc/login" class="cta-button" target="_blank">
+                    立即获取 Token
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 ZeroNews Team. All rights reserved.</p>
+            <p>访问官网: <a href="https://zeronews.cc" target="_blank" style="color: #667eea;">zeronews.cc</a></p>
+        </div>
+    </div>
+</body>
+</html>
