@@ -1,6 +1,6 @@
 name: ZeroNews
 package: cloud.lazycat.app.zeronews
-version: 1.0.0
+version: 3.0.3
 min_os_version: 1.3.8
 description: "Edge cloud intranet penetration platform with high-performance tunnel protocol"
 license: MIT
@@ -17,7 +17,7 @@ application:
 
 services:
   zeronews:
-    # zeronews/zeronews:latest
+    # zeronews/zeronews:v3.0.3
     image: registry.lazycat.cloud/czyt/zeronews/zeronews:4f226f4261dc7303
     network_mode: host
     environment:
