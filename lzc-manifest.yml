@@ -5,11 +5,11 @@ application:
     - /
   routes:
     - /=file:///lzcapp/pkg/content/
-
 services:
   zeronews:
     # zeronews/zeronews:v3.0.3
-    image: registry.lazycat.cloud/czyt/zeronews/zeronews:4f226f4261dc7303
+    # upstream: zeronews/zeronews:v3.0.3
+    image: registry.lazycat.cloud/czyt/zeronews/zeronews:8b546f8ae2559bdd
     network_mode: host
     environment:
       - TZ=Asia/Shanghai
