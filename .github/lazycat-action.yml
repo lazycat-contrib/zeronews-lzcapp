@@ -1,0 +1,38 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: .lazycat-output/zeronews.lpk
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: zeronews
+
+build:
+  run_buildscript: false
+
+images:
+  - id: zeronews
+    target: service
+    service: zeronews
+    source: zeronews/zeronews
+    channel: stable
+    tag_regex: '^v?[0-9]+\.[0-9]+\.[0-9]+$'
+    delivery:
+      mode: lazycat
+
+stores:
+  official:
+    enabled: true
+    skip_if_version_exists: true
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: ZeroNews
+    summary: 采用高性能隧道协议的边缘云内网穿透平台
+

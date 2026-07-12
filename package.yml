@@ -1,0 +1,22 @@
+package: cloud.lazycat.app.zeronews
+version: 3.0.3
+name: ZeroNews
+description: "Edge cloud intranet penetration platform with high-performance tunnel protocol"
+min_os_version: 1.5.0
+license: MIT
+homepage: https://zeronews.cc
+author: ZeroNews Team
+
+unsupported_platforms:
+  - ios
+  - android
+  - tvos
+
+locales:
+  en:
+    name: "ZeroNews"
+    description: "Edge cloud intranet penetration platform with self-developed high-performance zeronews tunnel protocol for secure and fast access to internal network resources"
+  zh:
+    name: "ZeroNews"
+    description: "边缘云内网穿透平台，采用自研高性能 zeronews tunnel 协议，实现内网与外网之间的安全、快速访问"
+

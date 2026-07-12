@@ -1,0 +1,4 @@
+*.lpk
+.lazycat-output/
+.lazycat-action/
+
